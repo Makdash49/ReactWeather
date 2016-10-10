@@ -15,12 +15,17 @@ var GreeterForm = React.createClass({
   onFormSubmit: function (e) {
     e.preventDefault();
 
+    var updates = {};
     var name = this.refs.name.value;
 
     if (name.length > 0) {
       this.refs.name.value = '';
-      this.props.onNewName(name);
+      updates.name = name;
     }
+
+    //validate the message too here.
+
+    this.props.onNewName(updates);
   },
   render: function () {
     return (
@@ -74,3 +79,9 @@ ReactDOM.render(
   <Greeter name={firstName}/>,
   document.getElementById('app')
 );
+
+//Changes to greater
+// 1. Add message to getInitialState (get default message from props)
+// 2. handleNewName function will take the updates as its variable
+// 3. render function of Greeter needs to use state instead of the props
+// 4. Use placeholder ref for placeholder text.
