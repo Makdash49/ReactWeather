@@ -31,17 +31,21 @@ var GreeterForm = React.createClass({
 
     //validate the message too here.
 
-    this.props.onNewUpdates(updates);
+    this.props.onNewData(updates);
   },
   render: function () {
     return (
       <div>
         <form onSubmit={this.onFormSubmit}>
-          <input type="text" ref="name" placeholder="name"/>
-          <br></br>
-          <textarea ref="message" placeholder="message"/>
-          <br></br>
-          <button>Set Name</button>
+          <div>
+            <input type="text" ref="name" placeholder="Enter name"/>
+          </div>
+          <div>
+            <textarea ref="message" placeholder="Enter message"/>
+          </div>
+          <div>
+            <button>Submit</button>
+          </div>
         </form>
 
       </div>
@@ -63,7 +67,7 @@ var Greeter = React.createClass({
       message: this.props.message
     };
   },
-  handleNewUpdates: function (updates) {
+  handleNewData: function (updates) {
     this.setState(updates);
   },
   render: function () {
@@ -72,7 +76,7 @@ var Greeter = React.createClass({
     return (
       <div>
         <GreeterMessage name={name} message={message}/>
-        <GreeterForm onNewUpdates={this.handleNewUpdates}/>
+        <GreeterForm onNewData={this.handleNewData}/>
       </div>
     );
   }
