@@ -17,10 +17,16 @@ var GreeterForm = React.createClass({
 
     var updates = {};
     var name = this.refs.name.value;
+    var message = this.refs.message.value;
 
     if (name.length > 0) {
       this.refs.name.value = '';
       updates.name = name;
+    }
+
+    if (message.length > 0) {
+      this.refs.message.value = '';
+      updates.message = message;
     }
 
     //validate the message too here.
@@ -33,7 +39,7 @@ var GreeterForm = React.createClass({
         <form onSubmit={this.onFormSubmit}>
           <input type="text" ref="name" placeholder="name"/>
           <br></br>
-          <textarea ref="message" placeholder = "message"/>
+          <textarea ref="message" placeholder="message"/>
           <br></br>
           <button>Set Name</button>
         </form>
@@ -53,7 +59,8 @@ var Greeter = React.createClass({
   },
   getInitialState: function (){
     return {
-      name: this.props.name
+      name: this.props.name,
+      message: this.props.message
     };
   },
   handleNewUpdates: function (updates) {
@@ -61,7 +68,7 @@ var Greeter = React.createClass({
   },
   render: function () {
     var name = this.state.name;
-    var message = this.props.message;
+    var message = this.state.message;
     return (
       <div>
         <GreeterMessage name={name} message={message}/>
@@ -79,7 +86,7 @@ ReactDOM.render(
   document.getElementById('app')
 );
 
-//Changes to greater
+//Changes to greeter
 // 1. Add message to getInitialState (get default message from props)
 // 2. handleNewName function will take the updates as its variable
 // 3. render function of Greeter needs to use state instead of the props
