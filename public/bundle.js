@@ -64,6 +64,12 @@
 	  React.createElement(Route, { path: '/', component: Main })
 	), document.getElementById('app'));
 
+	//Navigation component and render inside main component. No
+	// links.  H2 tags and have it say Nav Component.
+	// Then add to webpack config aliases
+	// Load it in and show it right above Main component h2 tag.
+	// make a new components file called Nav.jsx
+
 /***/ },
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
@@ -25122,20 +25128,48 @@
 	'use strict';
 
 	var React = __webpack_require__(1);
+	var Nav = __webpack_require__(217);
 
 	var Main = React.createClass({
 	  displayName: 'Main',
 
 	  render: function render() {
 	    return React.createElement(
-	      'h2',
+	      'div',
 	      null,
-	      'Main Component'
+	      React.createElement(Nav, null),
+	      React.createElement(
+	        'h2',
+	        null,
+	        'Main Component'
+	      )
 	    );
 	  }
 	});
 
 	module.exports = Main;
+
+/***/ },
+/* 217 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+
+	var Nav = React.createClass({
+	  displayName: 'Nav',
+
+	  render: function render() {
+	    return React.createElement(
+	      'h2',
+	      null,
+	      'Nav Component'
+	    );
+	  }
+	});
+
+	module.exports = Nav;
 
 /***/ }
 /******/ ]);

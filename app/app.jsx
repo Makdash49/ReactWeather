@@ -10,3 +10,9 @@ ReactDOM.render(
   </Router>,
   document.getElementById('app')
 );
+
+//Navigation component and render inside main component. No
+// links.  H2 tags and have it say Nav Component.
+// Then add to webpack config aliases
+// Load it in and show it right above Main component h2 tag.
+// make a new components file called Nav.jsx
