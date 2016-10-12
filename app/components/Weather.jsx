@@ -23,12 +23,13 @@ var Weather = React.createClass({
         isLoading: false
       });
     }, function (errorMessage) {
-      alert(errorMessage);
-      that.setState({
-        isLoading: false
-      });
+      that.setState({isLoading: false});
+      setTimeout(function () {
+        alert(errorMessage);
+      }, 1)
+      // alert(errorMessage);
     });
-    },
+  },
   render: function () {
     var location = this.state.location;
     var temp = this.state.temp;
