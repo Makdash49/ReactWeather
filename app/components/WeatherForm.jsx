@@ -1,13 +1,14 @@
 var React = require('react');
 
-var Formm = React.createClass({
+var WeatherForm = React.createClass({
   render: function () {
     return (
       <form>
         <input type='text' placeholder='Enter a city' ref='city'/>
+        <button>Get Weather</button>
       </form>
     );
   }
 });
 
-module.exports = Formm;
+module.exports = WeatherForm;

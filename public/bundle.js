@@ -25213,8 +25213,8 @@
 	'use strict';
 
 	var React = __webpack_require__(1);
-	var Formm = __webpack_require__(219);
-	var Message = __webpack_require__(220);
+	var WeatherForm = __webpack_require__(219);
+	var WeatherMessage = __webpack_require__(220);
 
 	var Weather = React.createClass({
 	  displayName: 'Weather',
@@ -25228,8 +25228,8 @@
 	        null,
 	        'Weather Component'
 	      ),
-	      React.createElement(Formm, null),
-	      React.createElement(Message, null)
+	      React.createElement(WeatherForm, null),
+	      React.createElement(WeatherMessage, null)
 	    );
 	  }
 	});
@@ -25244,19 +25244,24 @@
 
 	var React = __webpack_require__(1);
 
-	var Formm = React.createClass({
-	  displayName: 'Formm',
+	var WeatherForm = React.createClass({
+	  displayName: 'WeatherForm',
 
 	  render: function render() {
 	    return React.createElement(
 	      'form',
 	      null,
-	      React.createElement('input', { type: 'text', placeholder: 'Enter a city', ref: 'city' })
+	      React.createElement('input', { type: 'text', placeholder: 'Enter a city', ref: 'city' }),
+	      React.createElement(
+	        'button',
+	        null,
+	        'Get Weather'
+	      )
 	    );
 	  }
 	});
 
-	module.exports = Formm;
+	module.exports = WeatherForm;
 
 /***/ },
 /* 220 */
@@ -25266,19 +25271,19 @@
 
 	var React = __webpack_require__(1);
 
-	var Message = React.createClass({
-	  displayName: 'Message',
+	var WeatherMessage = React.createClass({
+	  displayName: 'WeatherMessage',
 
 	  render: function render() {
 	    return React.createElement(
 	      'h2',
 	      null,
-	      'Message Component'
+	      'It\'s 40 in Philadephia.'
 	    );
 	  }
 	});
 
-	module.exports = Message;
+	module.exports = WeatherMessage;
 
 /***/ },
 /* 221 */
