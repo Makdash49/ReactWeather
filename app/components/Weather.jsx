@@ -3,14 +3,12 @@ var WeatherForm = require('WeatherForm');
 var WeatherMessage = require('WeatherMessage');
 var openWeatherMap = require('openWeatherMap');
 
-
 var Weather = React.createClass({
   getInitialState: function () {
     return {
       isLoading: false
     }
   },
-
   handleSearch: function (location) {
     var that = this;
 
@@ -31,8 +29,6 @@ var Weather = React.createClass({
     });
   },
   render: function () {
-    var location = this.state.location;
-    var temp = this.state.temp;
     var {isLoading, location, temp} = this.state
 
     function renderMessage () {
